@@ -19,6 +19,8 @@ class AccountNumber
       return "2"
     when " _  _| _|"
       return "3"
+    when "   |_|  |"
+      return "4"
     else
       return number
     end

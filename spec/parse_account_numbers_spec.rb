@@ -40,6 +40,15 @@ describe FileParser do
   eos
     expect(@parser.convert_account_number(str)).to eql("333333333")
   end
+
+  it "converts all 4's to an account number" do
+    str = <<-eos
+                           
+|_||_||_||_||_||_||_||_||_| 
+  |  |  |  |  |  |  |  |  | 
+  eos
+    expect(@parser.convert_account_number(str)).to eql("444444444")
+  end
   
   def set_up_string
     str = <<-eos
