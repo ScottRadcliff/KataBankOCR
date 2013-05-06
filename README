@@ -1,0 +1,48 @@
+KataBank
+
+
+User Story 1
+
+
+User Story 2
+
+
+File of entries like this
+  up to 9 numbers
+  4 lines long
+  and 27 characters
+     _  _
+  |  _| _|
+  | |_  _|    
+
+
+take a file of the above numbers and parse them.
+  500 possible entires
+
+break them down into lines of integers
+
+
+==========================================
+each line has 9 digits 0-9
+
+file
+numbers
+  27 characters
+  4 lines long 
+  each number is 3 lines long with the 4th line blank
+
+
+  Parse numbers: use lines[] to perform logic on each line
+    grab a series of three characters from the starting point for 3 chars on each line and store them
+    compare the extracted number to a list of strings/integers
+    store the number
+
+
+as long as the current line < total lines 
+  if the line is a 4th line (line number % 4 == 0)
+    move to the next line
+  else
+    grab 3 characters on each line until we reach the end of the line
+
+
+Account class
