@@ -77,6 +77,20 @@ describe FileParser do
   eos
     expect(@parser.convert_account_number(str)).to eql("777777777")
   end
+
+  it "converts all 8's to an account number" do
+    str = <<-eos
+ _  _  _  _  _  _  _  _  _ 
+|_||_||_||_||_||_||_||_||_|
+|_||_||_||_||_||_||_||_||_|
+  eos
+    expect(@parser.convert_account_number(str)).to eql("888888888")
+  end
+
+
+
+
+
   def set_up_string
     str = <<-eos
  _  _  _  _  _  _  _  _  _ 
