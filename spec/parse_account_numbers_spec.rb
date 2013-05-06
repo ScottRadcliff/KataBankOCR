@@ -87,6 +87,14 @@ describe FileParser do
     expect(@parser.convert_account_number(str)).to eql("888888888")
   end
 
+  it "converts all 9's to an account number" do
+    str = <<-eos
+ _  _  _  _  _  _  _  _  _ 
+|_||_||_||_||_||_||_||_||_|
+ _| _| _| _| _| _| _| _| _|
+  eos
+    expect(@parser.convert_account_number(str)).to eql("999999999")
+  end
 
 
 
