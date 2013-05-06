@@ -9,7 +9,6 @@ class AccountNumber
 
 
   def self.match(number)
-    p number
     case number
     when " _ | ||_|"
       return "0"

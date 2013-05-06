@@ -7,7 +7,7 @@ describe FileParser do
   end
 
   it "takes a file and split account numbers" do
-    expect(@parser.parse_account_numbers.size).to eql 3
+    expect(@parser.extract_account_numbers.size).to eql 3
   end
 
   it "converts an account number to digits" do
@@ -96,6 +96,14 @@ describe FileParser do
     expect(@parser.convert_account_number(str)).to eql("999999999")
   end
 
+  it "converts mixed numbers to an account number" do
+    str = <<-eos
+ _  _  _  _  _  _  _  _  _ 
+|_||_||_||_||_||_||_||_||_|
+ _||_| _||_| _||_| _||_| _|
+  eos
+    expect(@parser.convert_account_number(str)).to eql("989898989")
+  end
 
 
 

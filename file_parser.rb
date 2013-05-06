@@ -5,7 +5,8 @@ class FileParser
     @file = file
   end
 
-  def parse_account_numbers
+  # Breaks the file of account numbers into 4 line chunks of data to parse
+  def extract_account_numbers
     start_line = 0
     end_line = 2
     account_number_section = []
@@ -19,6 +20,7 @@ class FileParser
   end
 
 
+  # Extracts 3x3 blocks of numbers and send them to be converted
   def convert_account_number(string)
     digits = []
     a = string.lines.to_a
