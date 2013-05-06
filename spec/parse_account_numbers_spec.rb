@@ -23,13 +23,22 @@ describe FileParser do
     expect(@parser.convert_account_number(str)).to eql("111111111")
   end
 
-  it "converts all 2.s to an account number" do
+  it "converts all 2's to an account number" do
     str = <<-eos
  _  _  _  _  _  _  _  _  _ 
  _| _| _| _| _| _| _| _| _|
 |_ |_ |_ |_ |_ |_ |_ |_ |_ 
   eos
     expect(@parser.convert_account_number(str)).to eql("222222222")
+  end
+
+  it "converts all 3's to an account number" do
+    str = <<-eos
+ _  _  _  _  _  _  _  _  _ 
+ _| _| _| _| _| _| _| _| _|
+ _| _| _| _| _| _| _| _| _|
+  eos
+    expect(@parser.convert_account_number(str)).to eql("333333333")
   end
   
   def set_up_string
