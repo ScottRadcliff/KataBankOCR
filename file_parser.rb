@@ -4,6 +4,14 @@ class FileParser
 
   def initialize(file)
     @file = file
+    account_numbers = extract_account_numbers
+    account_numbers.each do |account|
+      str = ""
+      account.each do |section|
+        str << section
+      end
+      convert_account_number(str)
+    end
   end
 
   # Breaks the file of account numbers into 4 line chunks of data to parse

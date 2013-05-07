@@ -11,7 +11,7 @@ class AccountNumber
     collection.each do |number|
       converted_number << match(number) 
     end
-    converted_number
+    puts converted_number
   end
 
 private
@@ -38,7 +38,7 @@ private
     when " _ |_| _|"
       return "9"
     else
-      return number
+      return "no match"
     end
   end
 end
