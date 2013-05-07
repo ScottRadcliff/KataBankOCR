@@ -9,9 +9,11 @@ class AccountNumber
   def self.convert(collection)
     converted_number = ""
     collection.each do |number|
+      number.gsub!("\n", " ")
       converted_number << match(number) 
     end
-    puts converted_number
+    puts "Account Number: " + converted_number
+    return converted_number
   end
 
 private
@@ -38,7 +40,7 @@ private
     when " _ |_| _|"
       return "9"
     else
-      return "no match"
+      return number
     end
   end
 end

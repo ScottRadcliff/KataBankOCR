@@ -7,7 +7,7 @@ describe FileParser do
   end
 
   it "takes a file and split account numbers" do
-    expect(@parser.extract_account_numbers.size).to eql 2
+    expect(@parser.extract_account_numbers).to be_instance_of Array
   end
 
 

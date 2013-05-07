@@ -2,6 +2,16 @@
 
 The first two user stories from (KataBankOCR)[http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR]
 
+## Running the code
+To run the application through the command line, assuming you have cloned the
+repository. Start an irb session, require the FileParser class, and initialize
+with a file. A file `entries.txt` has been provided.
+<pre>
+  irb -I .
+  require 'file_parser.rb'
+  FileParser.new(File.new('entries.txt'))
+</pre>
+
 ## Story One
 
 You work for a bank, which has recently purchased an ingenious machine to assist in reading letters and faxes sent in by branch offices. The machine scans the paper documents, and produces a file with a number of entries which each look like this:
