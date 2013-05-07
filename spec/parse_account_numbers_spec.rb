@@ -5,6 +5,13 @@ describe Parser do
   before :each do 
     @parser = Parser.new
   end
+    @parser = FileParser.new(File.new("entries.txt"))  
+  end
+
+  it "takes a file and split account numbers" do
+    expect(@parser.extract_account_numbers.size).to eql 2
+  end
+
 
   it "converts all 1's to an account number" do
     str  = <<-eos
@@ -96,5 +103,5 @@ describe Parser do
   eos
     expect(@parser.convert_account_number(str)).to eql("989898989")
   end
-
 end
+
