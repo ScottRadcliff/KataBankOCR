@@ -1,29 +1,37 @@
 require_relative("account_number")
+require("pp")
 class FileParser
 
   def initialize(file)
     @file = file
+    account_numbers = extract_account_numbers
+    account_numbers.each do |account|
+     convert_account_number(account)
+      account.each do |number|
+        # convert_account_number(number)
+      end
+    end
   end
 
   # Breaks the file of account numbers into 4 line chunks of data to parse
   def extract_account_numbers
     start_line = 0
     end_line = 2
-    account_number_section = []
+    account_number_sections = []
     lines = @file.readlines
     while end_line < lines.count + 1
-      account_number_section.push lines[start_line..end_line]
-      start_line = start_line + 3
+      account_number_sections.push lines[start_line..end_line]
+      start_line = end_line + 1
       end_line = end_line + 3
     end
-    return account_number_section
+    return account_number_sections
   end
 
 
   # Extracts 3x3 blocks of numbers and send them to be converted
   def convert_account_number(string)
     digits = []
-    a = string.lines.to_a
+    a = string[0].lines.to_a
     start_point = 0
     end_point = 3
     9.times do

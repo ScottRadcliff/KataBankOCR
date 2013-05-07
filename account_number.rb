@@ -1,4 +1,11 @@
 class AccountNumber
+  
+  # checksum calculation:
+  # (d1+2*d2+3*d3 +..+9*d9) mod 11 = 0
+  def self.checksum(string)
+    (string[8].to_i+2*string[7].to_i+3*string[6].to_i+4*string[5].to_i+5*string[4].to_i+6*string[3].to_i+7*string[2].to_i+8*string[1].to_i+9*string[0].to_i) % 11
+  end
+
   def self.convert(collection)
     converted_number = ""
     collection.each do |number|
