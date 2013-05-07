@@ -1,10 +1,8 @@
-require_relative("../parser.rb")
+require_relative("../file_parser.rb")
 
-describe Parser do
+describe FileParser do
   
   before :each do 
-    @parser = Parser.new
-  end
     @parser = FileParser.new(File.new("entries.txt"))  
   end
 
@@ -104,4 +102,3 @@ describe Parser do
     expect(@parser.convert_account_number(str)).to eql("989898989")
   end
 end
-
