@@ -10,9 +10,6 @@ describe FileParser do
     expect(@parser.extract_account_numbers.size).to eql 2
   end
 
-  it "converts an account number to digits" do
-    expect(@parser.convert_account_number(set_up_string)).to eql("000000000") 
-  end
 
   it "converts all 1's to an account number" do
     str  = <<-eos
@@ -104,14 +101,6 @@ describe FileParser do
   eos
     expect(@parser.convert_account_number(str)).to eql("989898989")
   end
-
-
-
-  def set_up_string
-    str = <<-eos
- _  _  _  _  _  _  _  _  _ 
-| || || || || || || || || |
-|_||_||_||_||_||_||_||_||_|
-  eos
-  end
 end
+
+
