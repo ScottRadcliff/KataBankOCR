@@ -14,7 +14,7 @@ class AccountNumber
     converted_number
   end
 
-
+private
   def self.match(number)
     case number
     when " _ | ||_|"

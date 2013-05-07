@@ -1,17 +1,9 @@
-require_relative("../file_parser.rb")
+require_relative("../parser.rb")
 
-describe FileParser do
+describe Parser do
   
   before :each do 
-    @parser = FileParser.new(File.new("entries.txt"))  
-  end
-
-  it "takes a file and split account numbers" do
-    expect(@parser.extract_account_numbers.size).to eql 2
-  end
-
-  it "converts an account number to digits" do
-    expect(@parser.convert_account_number(set_up_string)).to eql("000000000") 
+    @parser = Parser.new
   end
 
   it "converts all 1's to an account number" do
@@ -105,13 +97,4 @@ describe FileParser do
     expect(@parser.convert_account_number(str)).to eql("989898989")
   end
 
-
-
-  def set_up_string
-    str = <<-eos
- _  _  _  _  _  _  _  _  _ 
-| || || || || || || || || |
-|_||_||_||_||_||_||_||_||_|
-  eos
-  end
 end
